@@ -8,16 +8,16 @@ repositories {
 }
 
 configurations.all {
-    resolutionStrategy.force "io.netty:netty-handler:4.1.136.Final"
-    resolutionStrategy.force "io.netty:netty-handler-proxy:4.1.136.Final"
-    resolutionStrategy.force "io.netty:netty-codec-dns:4.1.136.Final"
-    resolutionStrategy.force "io.netty:netty-codec-http:4.1.136.Final"
-    resolutionStrategy.force "io.netty:netty-codec-http2:4.1.136.Final"
-    resolutionStrategy.force "io.netty:netty-resolver-dns:4.1.136.Final"
-    resolutionStrategy.force "io.projectreactor.netty:reactor-netty-http:1.2.18"
-    resolutionStrategy.force "com.fasterxml.jackson.core:jackson-core:2.21.4"
-    resolutionStrategy.force "org.apache.httpcomponents.core5:httpcore5-h2:5.4.3"
-    resolutionStrategy.force "com.nimbusds:nimbus-jose-jwt:10.0.2"
+    // resolutionStrategy.force "io.netty:netty-handler:4.1.136.Final"
+    // resolutionStrategy.force "io.netty:netty-handler-proxy:4.1.136.Final"
+    // resolutionStrategy.force "io.netty:netty-codec-dns:4.1.136.Final"
+    // resolutionStrategy.force "io.netty:netty-codec-http:4.1.136.Final"
+    // resolutionStrategy.force "io.netty:netty-codec-http2:4.1.136.Final"
+    // resolutionStrategy.force "io.netty:netty-resolver-dns:4.1.136.Final"
+    // resolutionStrategy.force "io.projectreactor.netty:reactor-netty-http:1.2.18"
+    // resolutionStrategy.force "com.fasterxml.jackson.core:jackson-core:2.21.4"
+    // resolutionStrategy.force "org.apache.httpcomponents.core5:httpcore5-h2:5.4.3"
+    // resolutionStrategy.force "com.nimbusds:nimbus-jose-jwt:10.0.2"
 }
 
 dependencies {
@@ -39,6 +39,9 @@ dependencies {
         exclude group: "com.azure", module: "azure-identity"
         exclude group: "com.ing.data", module: "cassandra-jdbc-wrapper"
         exclude group: "org.flywaydb", module: "flyway-database-nc-cassandra"
+        exclude group: "org.flywaydb", module: "flyway-database-nc-callbacks"
+        exclude group: "tools.jackson.core", module: "jackson-databind"
+        exclude group: "com.fasterxml.jackson.core", module: "jackson-databind"  
         exclude group: "org.apache.commons", module: "commons-text"
         exclude group: "com.h2database", module: "h2"
         exclude group: "com.pivotal.jdbc", module: "greenplumdriver"
@@ -51,9 +54,10 @@ dependencies {
         exclude group: "org.xerial", module: "sqlite-jdbc"
         exclude group: "com.google.protobuf", module: "protobuf-java"
         exclude group: "com.google.guava", module: "guava"
+        // exclude group: "com.fasterxml.jackson.core", module: "jackson-databind"
         constraints {
 	       implementation("org.postgresql:postgresql:42.6.0.jar")
-           implementation("com.fasterxml.jackson.core:jackson-databind:2.22.1")
+        //    implementation("com.fasterxml.jackson.core:jackson-databind:2.18.1")
         }
     }
 }
